@@ -40,7 +40,7 @@ export const Cart = () => {
 
     const removeProduct = async (productId) => {
         try {
-            const response = await axios.delete(`http://localhost:8000/api/cart/${userData._id}/product/${productId}`);
+            const response = await axios.delete(`https://server-sandy-three.vercel.app/api/cart/${userData._id}/product/${productId}`);
             // console.log(response.data);
             // setCartProducts(response.data); // Update the cart state after removing the product
             alert(response.data)
