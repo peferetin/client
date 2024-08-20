@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
     const fetchUser = async (token) => {
         try {
-            const response = await axios.post(`http://localhost:8000/api/users/token`, { token })
+            const response = await axios.post(`https://server-sandy-three.vercel.app/api/users/token`, { token })
             setUserData(response.data)
         }
         catch (err) {
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     // As a response from this api call, we get a token, we pass this token to the fetchUser function that will fetch the user information based on the token we get when we logged in
     const login = async (userData) => {
         try {
-            const loggedInUser = await axios.post(`http://localhost:8000/api/login`, userData)
+            const loggedInUser = await axios.post(`https://server-sandy-three.vercel.app/api/login`, userData)
             localStorage.setItem('token', loggedInUser.data.token)
             fetchUser(loggedInUser.data.token)
             return loggedInUser
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            const response = await axios(`http://localhost:8000/api/logout/${userData._id}`)
+            const response = await axios(`https://server-sandy-three.vercel.app/api/logout/${userData._id}`)
             if (response.data) {
                 alert(response.data)
             }

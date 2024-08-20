@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             // Check if cart exists for the user
-            const existingCart = await axios.get(`http://localhost:8000/api/cart/user/${userID}`)
+            const existingCart = await axios.get(`https://server-sandy-three.vercel.app/api/cart/user/${userID}`)
             if (existingCart.data) {
                 const cartId = existingCart.data._id
                 const updatedProducts = [...existingCart.data.products]
@@ -47,14 +47,14 @@ export const CartProvider = ({ children }) => {
 
                 console.log(updatedProducts)
 
-                await axios.put(`http://localhost:8000/api/cart/${cartId}`, {
+                await axios.put(`https://server-sandy-three.vercel.app/api/cart/${cartId}`, {
                     products: updatedProducts
                 })
                 alert('Product has been added')
             }
             else {
                 // CREATE THE CART
-                await axios.post(`http://localhost:8000/api/cart`, {
+                await axios.post(`https://server-sandy-three.vercel.app/api/cart`, {
                     userId: userID,
                     products: [{
                         productId: productId,
@@ -77,7 +77,7 @@ export const CartProvider = ({ children }) => {
 
     const getProductFromCart = async (userId) => {
         try {
-            const getProducts = await axios.get(`http://localhost:8000/api/cart/user/${userData._id}`)
+            const getProducts = await axios.get(`https://server-sandy-three.vercel.app/api/cart/user/${userData._id}`)
             console.log(getProducts);
             setCart(getProducts.data)
 
