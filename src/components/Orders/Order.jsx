@@ -64,7 +64,7 @@ const Orders = () => {
 
     const fetchOrders = async () => {
         try {
-            const ordersByUserId = await axios.get(`http://localhost:8000/api/order/user/${userData._id}`);
+            const ordersByUserId = await axios.get(`https://server-sandy-three.vercel.app/api/order/user/${userData._id}`);
             console.log(ordersByUserId);
             setOrders(ordersByUserId.data);
         } catch (err) {

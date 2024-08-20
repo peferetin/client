@@ -12,7 +12,7 @@ const CategoryDetails = () => {
 
     const fetchCategory = async () => {
         try {
-            const category = await axios.get(`http://localhost:8000/api/categories/${id}`)
+            const category = await axios.get(`https://server-sandy-three.vercel.app/api/categories/${id}`)
             setCategory(category.data)
         }
         catch (err) {

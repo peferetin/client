@@ -16,7 +16,7 @@ const Contact = () => {
     const sendMessage = async (e) => {
         e.preventDefault()
         try {
-            const newMessage = await axios.post(`http://localhost:8000/api/send-email`, message)
+            const newMessage = await axios.post(`https://server-sandy-three.vercel.app/api/send-email`, message)
             // setMessageInfo(newMessage.data.message)
             console.log(newMessage);
         }

@@ -31,7 +31,7 @@ const Checkout = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8000/api/order`, {
+            const response = await axios.post(`https://server-sandy-three.vercel.app/api/order`, {
                 userId: userData._id,
                 paymentMethodId: paymentMethod.id,
             }, {

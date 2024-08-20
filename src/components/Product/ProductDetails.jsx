@@ -25,7 +25,7 @@ const ProductDetails = () => {
 
     const fetchProduct = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/products/${id}`);
+            const response = await axios.get(`https://server-sandy-three.vercel.app/api/products/${id}`);
             setProduct(response.data);
         } catch (error) {
             setError(error);

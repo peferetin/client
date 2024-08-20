@@ -20,7 +20,7 @@ export const Cart = () => {
 
     const allProducts = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/cart/user/${userData._id}`)
+            const response = await axios.get(`https://server-sandy-three.vercel.app/api/cart/user/${userData._id}`)
             console.log(response.data)
             setCartProducts(response.data)
         } catch (err) {

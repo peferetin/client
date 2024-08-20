@@ -14,7 +14,7 @@ export default function RegisterModal({ open, setOpen }) {
     const handleRegister = async (e) => {
         e.preventDefault()
         try {
-            const createdUser = await axios.post(`http://localhost:8000/api/register`, newUser)
+            const createdUser = await axios.post(`https://server-sandy-three.vercel.app/api/register`, newUser)
             if (createdUser.data.message) {
                 setOpen(false)
                 return alert(createdUser.data.message)

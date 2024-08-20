@@ -22,7 +22,7 @@ const SearchBar = () => {
   const fetchSearchResults = async (e) => {
     e.preventDefault();
     try {
-      const searchResults = await axios.get(`http://localhost:8000/api/product?name=${searchTerm}`);
+      const searchResults = await axios.get(`https://server-sandy-three.vercel.app/api/product?name=${searchTerm}`);
       setSearchResults(searchResults.data);
       console.log(searchResults.data);
     } catch (error) {

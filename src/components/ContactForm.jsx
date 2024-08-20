@@ -27,7 +27,7 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`http://localhost:8000/api/user/update/${userData._id}`, { address })
+            const response = await axios.put(`https://server-sandy-three.vercel.app/api/user/update/${userData._id}`, { address })
             if (response.data) {
                 alert('Address has been added')
                 navigate('/checkout')

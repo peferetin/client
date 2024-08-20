@@ -24,7 +24,7 @@ const Profile = () => {
 
     const getUserById = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/users/${userData._id}`)
+            const response = await axios.get(`https://server-sandy-three.vercel.app/api/users/${userData._id}`)
             console.log(response.data)
             setUser(prevUser => ({
                 ...prevUser,
@@ -56,7 +56,7 @@ const Profile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`http://localhost:8000/api/users/${userData._id}`, { user })
+            const response = await axios.put(`https://server-sandy-three.vercel.app/api/users/${userData._id}`, { user })
             console.log(response)
             if (response.data) {
                 alert('User info has been updated')

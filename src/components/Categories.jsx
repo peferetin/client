@@ -13,7 +13,7 @@ const Categories = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/categories');
+            const response = await axios.get('https://server-sandy-three.vercel.app/api/categories');
             setCategories(response.data);
         } catch (err) {
             setError(err);
@@ -30,7 +30,7 @@ const Categories = () => {
         e.preventDefault();
         try {
             if (searchCategory.length > 0) {
-                const response = await axios.get(`http://localhost:8000/api/category?name=${searchCategory}`);
+                const response = await axios.get(`https://server-sandy-three.vercel.app/api/category?name=${searchCategory}`);
                 setCategory(response.data);
             } else {
                 setCategory(null);

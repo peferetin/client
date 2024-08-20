@@ -21,7 +21,7 @@ const ProductByCategoryId = () => {
     const fetchProducts = async () => {
 
         try {
-            const products = await axios.get(`http://localhost:8000/api/products/categories/${categoryID}`)
+            const products = await axios.get(`https://server-sandy-three.vercel.app/api/products/categories/${categoryID}`)
             setProducts(products.data)
             console.log(products.data)
         }
